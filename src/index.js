@@ -3,7 +3,6 @@ document.getElementById("make-class-leak").onclick = () => {
     async myAsyncMethod(promise) {
       const result = await promise;
       console.log("myAsyncMethod ran with promise result: ", result);
-      return result;
     }
   }
   const myClassInstance = new MyClass();
