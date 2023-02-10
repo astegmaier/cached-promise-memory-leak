@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
+  <head>
+    <title>Cached Promises Memory Leak</title>
+  </head>
   <body>
-    <h1>Sample Memory Leak</h1>
-    <button id="make-class-leak">
-      Create a new class and make it leak
-    </button>
+    <h1>Cached Promises Memory Leak</h1>
+    <button id="make-class-leak">Create a new class and make it leak</button>
+    <p>
+      This project contains a simple example of a very tricky memory leak. It is
+      a simplified version of something that is happening in a real production
+      app, with all non-essential parts stripped away. It may seem a bit weird,
+      but (trust me) in the real app, there are sensible reasons for wanting to
+      structure code this way.
+    </p>
+    <p>
+      If you click the "create a new class and make it leak" button, you will
+      run this code:
+    </p>
+    <pre style="background: lightgrey; padding: 15px" id="code"></pre>
+    <p>
+      They, if you create a heap snapshot in chrome devtools, you'll see the
+      retained MyClass object, the first retainer is myAsyncMethod, and it's
+      represented as a Generator object in the "running" state:
+    </p>
+    <img src="./heap-snapshot.png" />
+    <p>
+      Strangely, the cached promise seems to have already resolved, so it's
+      unclean why myAsyncMethod would still be running:
+    </p>
+    <img src="./heap-snapshot-fulfilled-promise.png" />
     <script src="./index.js"></script>
+    <script>
+      fetch("./index.js")
+        .then((response) => response.text())
+        .then((code) => (document.getElementById("code").innerText = code));
+    </script>
   </body>
 </html>

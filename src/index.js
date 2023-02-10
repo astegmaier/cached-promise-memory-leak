@@ -8,15 +8,17 @@ document.getElementById("make-class-leak").onclick = () => {
   }
   const myClassInstance = new MyClass();
   myClassInstance.myAsyncMethod(getAndCachePromise());
-}
+};
 
-globalThis.promiseCache = []
+globalThis.promiseCache = [];
 
 function getAndCachePromise() {
-  const myPromise = new Promise(resolve => setTimeout(() => resolve("<PromiseResult>"), 50));
+  const myPromise = new Promise((resolve) =>
+    setTimeout(() => resolve("<PromiseResult>"), 50)
+  );
   promiseCache.push(myPromise);
-  myPromise.then(result => {
+  myPromise.then((result) => {
     console.log("getAndCachePromise then() handler resolved promise with result: ", result);
-  })
+  });
   return myPromise;
 }
