@@ -1,15 +1,16 @@
-document.getElementById("make-class-leak").onclick = () => {
-  class MyClass {
-    async myAsyncMethod(promise) {
-      const result = await promise;
-      console.log("myAsyncMethod ran with promise result: ", result);
-    }
-  }
+document.getElementById("make-class-leak").onclick = async () => {
   const myClassInstance = new MyClass();
   myClassInstance.myAsyncMethod(getAndCachePromise());
 };
 
-globalThis.promiseCache = [];
+class MyClass {
+  async myAsyncMethod(promise) {
+    const result = await promise;
+    console.log("myAsyncMethod ran with promise result: ", result);
+  }
+}
+
+const promiseCache = [];
 
 function getAndCachePromise() {
   const myPromise = new Promise((resolve) =>
