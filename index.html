@@ -20,8 +20,8 @@
     <div class="container">
       <h1 class="display-2">Cached Promises Memory Leak</h1>
       <p class="lead">
-        This page contains an example of a very tricky memory leak. It is
-        a simplified version of something that is happening in a real production
+        This page contains an example of a very tricky memory leak. It is a
+        simplified version of something that is happening in a real production
         app, with all non-essential parts stripped away. It may seem a bit
         weird, but (trust me) in the real app, there are sensible reasons for
         wanting to structure code this way.
@@ -42,8 +42,9 @@
       ><code class="language-javascript" id="code"></code></pre>
       <p>
         Then, if you create a heap snapshot in chrome devtools, you'll see the
-        retained <code>MyClass</code> object, the first retainer is <code>myAsyncMethod</code>, and it's
-        represented as a <code>Generator</code> object in the "running" state:
+        retained <code>MyClass</code> object, the first retainer is
+        <code>myAsyncMethod</code>, and it's represented as a
+        <code>Generator</code> object in the "running" state:
       </p>
       <img src="./images/heap-snapshot.png" />
       <p>
@@ -51,6 +52,19 @@
         unclear why <code>myAsyncMethod</code> would still be running:
       </p>
       <img src="./images/heap-snapshot-fulfilled-promise.png" />
+      <h2>Possible Solution</h2>
+      <p>
+        Tweaking the way <code>getAndCachePromise</code> works can remove the
+        leak, but I don't understand why. See this page for an example:
+      </p>
+      <ul>
+        <li>
+          <a href="solutions/return-chained-promise.html"
+            >Modify <code>getAndCachePromise</code> works to return the chained
+            promise instead of the original cached one.</a
+          >
+        </li>
+      </ul>
     </div>
     <script src="./index.js"></script>
     <script
