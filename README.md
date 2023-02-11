@@ -6,7 +6,7 @@ app, with all non-essential parts stripped away. It may seem a bit weird,
 but (trust me) in the real app, there are sensible reasons for wanting to
 structure code this way.
 
-For more details [see it running live](https://astegmaier.github.io/cached-promise-memory-leak/src/index.html).
+For more details [see it running live](https://astegmaier.github.io/cached-promise-memory-leak/).
 
 ## Running Locally
 
