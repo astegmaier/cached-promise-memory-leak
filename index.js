@@ -1,4 +1,4 @@
-document.getElementById("make-class-leak").onclick = async () => {
+document.getElementById("make-class-leak").onclick = () => {
   const myClassInstance = new MyClass();
   myClassInstance.myAsyncMethod(getAndCachePromise());
 };
