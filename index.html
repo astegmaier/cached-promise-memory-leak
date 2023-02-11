@@ -45,12 +45,12 @@
         retained <code>MyClass</code> object, the first retainer is <code>myAsyncMethod</code>, and it's
         represented as a <code>Generator</code> object in the "running" state:
       </p>
-      <img src="./heap-snapshot.png" />
+      <img src="./images/heap-snapshot.png" />
       <p>
         Strangely, the cached promise seems to have already resolved, so it's
         unclear why <code>myAsyncMethod</code> would still be running:
       </p>
-      <img src="./heap-snapshot-fulfilled-promise.png" />
+      <img src="./images/heap-snapshot-fulfilled-promise.png" />
     </div>
     <script src="./index.js"></script>
     <script
