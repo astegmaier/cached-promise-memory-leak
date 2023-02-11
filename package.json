@@ -1,14 +1,13 @@
 {
-    "name": "cached-promise-memory-leak",
-    "version": "1.0.0",
-    "description": "A playground to illustrate a memory leak caused by caching promises interacting with async class methods",
-    "scripts": {
-      "serve": "http-server src"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "http-server": "^14.1.1"
-    }
+  "name": "cached-promise-memory-leak",
+  "version": "1.0.0",
+  "description": "A playground to illustrate a memory leak caused by caching promises interacting with async class methods",
+  "scripts": {
+    "serve": "http-server src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
-  
+}
