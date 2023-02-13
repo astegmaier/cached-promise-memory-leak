@@ -41,11 +41,14 @@
         class="p-3 border border-secondary-subtle rounded-3"
       ><code class="language-javascript" id="code"></code></pre>
       <p>
-        Then, if you create a heap snapshot in chrome devtools, you'll see the
-        retained <code>MyClass</code> objects (one instance for each time you
-        clicked the button). The first retainer is <code>myAsyncMethod</code>,
-        and it's represented as a <code>Generator</code> object in the "running"
-        state:
+        Then, if you
+        <a
+          href="https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots/"
+          >create a heap snapshot in chrome devtools</a
+        >, you'll see the retained <code>MyClass</code> objects (one instance
+        for each time you clicked the button). The first retainer is
+        <code>myAsyncMethod</code>, and it's represented as a
+        <code>Generator</code> object in the "running" state:
       </p>
       <img src="./images/heap-snapshot.png" />
       <p>
