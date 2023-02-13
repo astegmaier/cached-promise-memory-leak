@@ -65,6 +65,88 @@
           >
         </li>
       </ul>
+      <h2>Browser Test Results</h2>
+      <p>
+        The issue appears to be a chromium-specific regression (affecting both
+        Edge and Chrome) introduced in version 110.
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Browser</th>
+            <th scope="col">Version</th>
+            <th scope="col">Leak?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chrome</td>
+            <td>110</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>110</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td>110</td>
+            <td>No</td>
+          </tr>
+
+          <tr>
+            <td>Chrome</td>
+            <td>100</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>100</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td>99</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>99</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td>98</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>98</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td>95</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>95</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td>90</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>90</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <script src="./index.js"></script>
     <script
