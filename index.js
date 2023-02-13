@@ -1,6 +1,6 @@
 document.getElementById("make-class-leak").onclick = () => {
   const myClassInstance = new MyClass();
-  myClassInstance.myAsyncMethod();
+  myClassInstance.myAsyncMethod(); // <-- each MyClass instance on which you call myAsyncMethod will leak.
 };
 
 class MyClass {
