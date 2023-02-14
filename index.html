@@ -20,11 +20,13 @@
     <div class="container">
       <h1 class="display-2">Cached Promises Memory Leak</h1>
       <p class="lead">
-        This page contains an example of a very tricky memory leak. It is a
-        simplified version of something that is happening in a real production
-        app, with all non-essential parts stripped away. It may seem a bit
-        weird, but (trust me) in the real app, there are sensible reasons for
-        wanting to structure code this way.
+        This page contains a reproduction of
+        <a href="https://bugs.chromium.org/p/v8/issues/detail?id=13736"
+          >a memory leak bug in chromium 100+</a
+        >. It is a simplified version of something that is happening in a real
+        production app, with all non-essential parts stripped away. It may seem
+        a bit weird, but (trust me) in the real app, there are sensible reasons
+        for wanting to structure code this way.
       </p>
       <p>
         <button class="btn btn-primary" id="make-class-leak">

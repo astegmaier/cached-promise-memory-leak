@@ -1,7 +1,7 @@
 # Cached Promises Memory Leak</h1>
 
-This project contains a simple example of a very tricky memory leak. It is
-a simplified version of something that is happening in a real production
+This project contains a reproduction of [a memory leak bug in Chromium 100+](https://bugs.chromium.org/p/v8/issues/detail?id=13736).
+It is a simplified version of something that is happening in a real production
 app, with all non-essential parts stripped away. It may seem a bit weird,
 but (trust me) in the real app, there are sensible reasons for wanting to
 structure code this way.
