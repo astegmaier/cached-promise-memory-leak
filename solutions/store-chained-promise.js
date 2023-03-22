@@ -1,6 +1,6 @@
 document.getElementById("make-class-leak").onclick = () => {
   const myClassInstance = new MyClass();
-  myClassInstance.myAsyncMethod(); // <-- each MyClass instance on which you call myAsyncMethod will leak.
+  myClassInstance.myAsyncMethod();
 };
 
 class MyClass {
@@ -14,6 +14,6 @@ const promiseCache = [];
 
 function getAndCachePromise() {
   const myPromise = new Promise((resolve) => resolve("<PromiseResult>"));
-  promiseCache.push(myPromise.then());
+  promiseCache.push(myPromise.then()); // <-- we copy the promise before storing it, which fixes the leak.
   return myPromise;
 }
