@@ -58,6 +58,17 @@
         unclear why <code>myAsyncMethod</code> would still be running:
       </p>
       <img src="./images/heap-snapshot-fulfilled-promise.png" />
+      <h2>Variants of the Same Leak</h2>
+      It is possible to produce a similar leak by using a slightly different
+      pattern:
+      <ul>
+        <li>
+          <a href="variants/async-function-closures.html"
+            >Capture <code>MyClass</code> in the closure of an async function
+            that awaits a cached promise.</a
+          >
+        </li>
+      </ul>
       <h2>Possible Solution</h2>
       <p>
         Tweaking the way <code>getAndCachePromise</code> works can remove the
